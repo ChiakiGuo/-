@@ -1,0 +1,42 @@
+body {
+  font-family: 'ZCOOL KuaiLe', cursive;
+  text-align: center;
+  background-color: #fefaf2;
+  padding: 50px;
+}
+.logo {
+  width: 180px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+h1 {
+  font-size: 28px;
+}
+button {
+  font-size: 18px;
+  padding: 10px 25px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+  margin: 5px;
+  transition: background-color 0.2s ease;
+}
+button:hover {
+  background-color: #eee;
+}
+select {
+  font-size: 16px;
+  padding: 5px;
+}
+#result {
+  margin-top: 30px;
+  font-size: 24px;
+  color: #2e7d32;
+  background-color: #f3fdf3;
+  padding: 15px;
+  border: 1px dashed #c8e6c9;
+  border-radius: 6px;
+  display: inline-block;
+  transition: all 0.4s ease;
+}
