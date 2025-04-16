@@ -40,3 +40,32 @@ select {
   display: none;
   transition: all 0.4s ease;
 }
+@media (max-width: 600px) {
+  body {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  button {
+    width: 90%;
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  select {
+    width: 90%;
+    font-size: 16px;
+  }
+
+  #result {
+    font-size: 20px;
+    padding: 12px;
+  }
+
+  .logo {
+    width: 140px;
+  }
+}
