@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-  <link rel="stylesheet" href="style.css">
-
   <meta charset="UTF-8">
   <title>今天吃什么？</title>
+
+  <!-- 美化字体和样式 -->
+  <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <img src="Image_20250416000341.jpg" alt="餐厅 Logo" width="200">
+  <img src="Image_20250416000341.jpg" alt="餐厅 Logo" class="logo">
 
   <h1>东蜀椒麻今天吃什么？</h1>
+
   <label>
     是否需要套餐：
     <select id="needSide">
@@ -17,14 +20,23 @@
       <option value="no">不需要</option>
     </select>
   </label>
+
   <br><br>
   <button onclick="chooseMeal()">开始选择</button>
 
   <div id="result"></div>
 
+  <!-- JavaScript 写在 index.html 中 -->
   <script>
-    const mainDishes = ["特色小炒肉饭","土豆回锅肉饭","鱼香肉丝饭","辣藕鸡丁饭","肉末豇豆饭","香卤牛肉饭","孜然菜花饭","五花肉手撕包菜饭","辣炒双拼饭"];
-    const sideDishes = ["炸鸡架","酥皮炸豆腐","黄金藕条","香酥鸡腿菇","香酥平菇","辣卤土豆","辣卤藕片","辣卤豆皮","辣卤腐竹"];
+    const mainDishes = [
+      "特色小炒肉饭", "土豆回锅肉饭", "鱼香肉丝饭", "辣藕鸡丁饭", "肉末豇豆饭",
+      "香卤牛肉饭", "孜然菜花饭", "五花肉手撕包菜饭", "辣炒双拼饭"
+    ];
+
+    const sideDishes = [
+      "炸鸡架", "酥皮炸豆腐", "黄金藕条", "香酥鸡腿菇", "香酥平菇",
+      "辣卤土豆", "辣卤藕片", "辣卤豆皮", "辣卤腐竹"
+    ];
 
     function chooseMeal() {
       const needSide = document.getElementById("needSide").value;
@@ -36,8 +48,9 @@
         result += " + " + side;
       }
 
-      document.getElementById("result").textContent = result;
-
+      const resultBox = document.getElementById("result");
+      resultBox.textContent = result;
+      resultBox.style.display = "inline-block"; // 点按钮后显示结果框
     }
   </script>
 </body>
