@@ -1,11 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head>
   <meta charset="UTF-8">
-  <title>Welcome!</title>
+  <title>今天吃什么？</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding-top: 50px;
+    }
+    button {
+      font-size: 18px;
+      padding: 10px 20px;
+    }
+    select {
+      font-size: 16px;
+      padding: 5px;
+    }
+    #result {
+      margin-top: 30px;
+      font-size: 24px;
+      color: #2e7d32;
+    }
+  </style>
 </head>
 <body>
-  <h1>Hello, GitHub Pages!</h1>
-  <p>This is my first webpage hosted on GitHub.</p>
+  <h1>今天吃什么？</h1>
+  <label>
+    是否需要配菜：
+    <select id="needSide">
+      <option value="yes">需要</option>
+      <option value="no">不需要</option>
+    </select>
+  </label>
+  <br><br>
+  <button onclick="chooseMeal()">帮我选！</button>
+
+  <div id="result"></div>
+
+  <script>
+    const mainDishes = ["牛肉面", "鸡排饭", "炸酱面", "羊肉泡馍", "烤鸡腿饭", "酸菜鱼", "鸡丝凉面", "炒饭"];
+    const sideDishes = ["凉拌黄瓜", "海带丝", "紫菜蛋花汤", "土豆丝", "小青菜", "豆腐脑"];
+
+    function chooseMeal() {
+      const needSide = document.getElementById("needSide").value;
+      const main = mainDishes[Math.floor(Math.random() * mainDishes.length)];
+      let result = "今天吃：" + main;
+
+      if (needSide === "yes") {
+        const side = sideDishes[Math.floor(Math.random() * sideDishes.length)];
+        result += " + " + side;
+      }
+
+      document.getElementById("result").textContent = result;
+    }
+  </script>
 </body>
 </html>
